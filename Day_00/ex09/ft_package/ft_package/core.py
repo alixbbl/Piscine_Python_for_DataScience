@@ -1,0 +1,4 @@
+# Ici on va ecrire nos fonctions :
+
+def count_in_list(lst, element):
+	return lst.count(element)

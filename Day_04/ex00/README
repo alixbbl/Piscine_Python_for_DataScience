@@ -1,0 +1,41 @@
+# DAY 04 - NOTIONS
+
+## Les arguments *args et **kwargs:
+Lorsqu'une fonction prend un ensemble d'arguments de natures variées, comme avec
+ft_statistics (des int, des float, des strings assignées...). On peut dstinguer
+deux types d'arguments.
+
+**Les *args:**
+Ce sont les arguments positionnels, c'est à dire des valeurs directement entrées
+dans la fonction. Leur position est importante.
+**Les **kwargs:**
+Ce sont les arguments nommés, il s'agit de paires key/value. Ce sont les noms des
+fonctions de stats dans ft_statistics.
+Pour parcourir une liste de kwargs, on utilise la méthode items(), en effet, il s'agit
+d'un dictionnaire, ou liste de paires de clef/valeur.
+`for keay, value in kwargs.items():`
+
+L'utilisation de cette syntaxe permet une grande souplesse pour la fonction.
+
+## Les fonctions "lambda" :
+Une lambda est une petite fonction définie par le mot-clef. Elles peuvent être utiles
+comme dans le cas d'un dictionnaire de key/value : string/fonction, pour retarder l'exec.
+
+Sans lambda, la fonction est exécutée immédiatement
+`result = np.mean([1, 2, 3])`
+
+Avec lambda, la fonction n'est exécutée que lorsqu'on appelle la lambda
+`lazy_mean = lambda: np.mean([1, 2, 3])`
+Pour exécuter la fonction, on appelle la lambda
+`result = lazy_mean()`
+
+Dans le cas de ft_statistics, cela permet d'ecrire le dictionnaire :
+`arguments = np.array(args) # on met les arguments positionnels dans un array`
+`STATS_FUNCTIONS = {`
+`	'mean' : lambda: np.mean(arguments),`
+`	'median' : lambda: np.median(arguments),`
+`	'quartile' : lambda: np.percentile(arguments, 25),`
+`	'std' : lambda: np.std(arguments),`
+`	'var' : lambda: np.var(arguments)`
+`}'`
+Sans que les fonctions ne soient directement appelées.

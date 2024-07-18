@@ -1,0 +1,26 @@
+# PYTHON
+
+Quelques consignes :
+
+Activate a prexisting venv:
+`/mnt/nfs/homes/alibourb/Documents/Python_for_Data_Science/.venv/bin/python -m pip install pandas`
+
+To install therefore a new package ou lib :
+`/mnt/nfs/homes/alibourb/Documents/Python_for_Data_Science/.venv/bin/python -m pip install pandas`
+
+## How to create a new virtual env in Python :
+
+To create a new virtual environment in Python, follow these steps:
+
+1. **Open your terminal**.
+
+2. **Navigate to your project directory** where you want to create the virtual environment.
+
+3. **Run the following command**:
+
+For Python 3.x, replace `myenv` with your desired environment name:
+
+`python3 -m venv myenv`
+
+
+This command creates a new directory named `myenv` in your project directory, which contains the virtual environment.
