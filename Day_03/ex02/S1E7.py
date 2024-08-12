@@ -20,9 +20,15 @@ class Baratheon(Character):
 		self.is_alive = False
 
 	def __str__(self):
+		"""
+		Represents the function by a string expliciting its action.
+		"""
 		return f"Vector: ('{self.family_name}', '{self.eyes}', '{self.hair}')"
 
 	def __repr__(self):
+		"""
+		This function is destinated to devs, it describs more fully what the function is used for.
+		"""
 		return f"Vector: ('{self.family_name}', '{self.eyes}', '{self.hair}')"
 
 
@@ -41,12 +47,21 @@ class Lannister(Character):
 
 	@classmethod
 	def create_lannister(cls, first_name, is_alive=True):
+		"""
+		Creates a new instance of the class.
+		"""
 		return cls(first_name, is_alive)
 
 	def __str__(self):
+		"""
+		Represents the function by a string expliciting its action.
+		"""
 		return f"Vector: ('{self.family_name}', '{self.eyes}', '{self.hair}')"
 
 	def __repr__(self):
+		"""
+		This function is destinated to devs, it describs more fully what the function is used for.
+		"""
 		return f"Vector: ('{self.family_name}', '{self.eyes}', '{self.hair}')"
 
 	def die(self):

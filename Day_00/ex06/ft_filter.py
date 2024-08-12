@@ -12,6 +12,7 @@ is true. If function is None, return the items that are true.
 import sys
 
 # si la fonction n'existe pas, on retourne les items qui sont True
+# cette fonction va retourner une "liste par compréhension"
 def ft_filter(function, seq):
 	if function is None:
 		return[item for item in seq if item]
@@ -19,7 +20,7 @@ def ft_filter(function, seq):
 		return [item for item in seq if function(item)]
 
 def main():
-	# Comparer avec le comportement classique de la fonction si les args sont pas bns
+	# Comparer avec le comportement classique de la fonction si les args sont pas bons
 	if len(sys.argv) != 3:
 		sys.exit(1)
 

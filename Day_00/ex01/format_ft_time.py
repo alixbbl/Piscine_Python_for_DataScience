@@ -2,8 +2,7 @@
 
 # ******************* Exercice 1 *******************
 
-import time, datetime
-from datetime import datetime, date
+from datetime import datetime
 
 # objectifs du rendu
 # Print sur la sortie standard :

@@ -8,13 +8,15 @@ Pandas est une bibliothèque logicielle écrite pour le langage de programmation
 Un DataFrame est une structure de données bidimensionnelle, essentiellement une table avec des lignes et des colonnes.
 Chaque colonne dans un DataFrame peut avoir un type différent (numérique, chaîne, booléen, etc.).
 Les DataFrames sont idéaux pour représenter des données réelles : des feuilles de calcul Excel, des tables SQL, etc.
+Faire appel a la fonction load() via un path, permet de retourner un dataset.
 
 **Series**
 Une Series est une structure de données unidimensionnelle. On peut la considérer comme une colonne d'un DataFrame.
 Tous les éléments d'une Series doivent être du même type de données.
 Les Series sont utiles pour représenter des séries temporelles, des séquences de valeurs, etc.
-Utilisation de Pandas
-Pour utiliser Pandas, vous devez d'abord l'importer. Voici comment vous pouvez le faire :
+
+## Utilisation de Pandas
+Pour utiliser Pandas, il faut d'abord l'importer. Voici comment faire :
 `import pandas as pd`
 
 **Création d'un DataFrame**
@@ -30,7 +32,7 @@ Voici comment créer une Series :
 `s = pd.Series([1, 3, 5, 7, 9])`
 
 **Manipulation de données**
-Pandas offre une large gamme de fonctions pour nettoyer, transformer, manipuler et analyser vos données. Quelques opérations courantes incluent :
+Pandas offre une large gamme de fonctions pour nettoyer, transformer, manipuler et analyser les données. Quelques opérations courantes incluent :
 
 	- Filtrage et sélection de données
 	- Fusion et jointure de DataFrames

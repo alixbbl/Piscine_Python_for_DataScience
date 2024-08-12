@@ -5,7 +5,6 @@ class Character(ABC):
 	"""
 	This class takes a first_name as first mandatory parameter, is_alive as a
 	non mandatory second set to True
-
 	"""
 	def __init__(self, first_name, is_alive=True):
 		"""
@@ -13,7 +12,7 @@ class Character(ABC):
 		"""
 		self.first_name = first_name
 		self.is_alive = is_alive
-	@abstractmethod # decorateur qui implique que la methode est anstraite = comme virtuelle pure en c++
+	@abstractmethod # decorateur qui implique que la methode est abstraite = comme virtuelle pure en c++
 	def die(self): # pas de code ici, c'est aux classes qui heritent de mettre la methode
 		pass
 

@@ -8,8 +8,8 @@ def square(x: int | float) -> int | float:
 def pow(x: int | float) -> int | float:
     return (x ** x)
 
-# fonction qui prend une fonction et un nbre en params, appel de la focntion interne
-# a chaque appel de l'objet
+# fonction qui prend une fonction et un nbre en params, appel de la fonction interne
+# à chaque appel de l'objet
 def outer(x: int | float, function) -> object:
     count = 0
     def inner() -> float:
