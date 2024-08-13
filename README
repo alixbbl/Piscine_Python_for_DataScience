@@ -3,7 +3,7 @@
 Quelques consignes :
 
 Activate a prexisting venv:
-`/mnt/nfs/homes/alibourb/Documents/Python_for_Data_Science/.venv/bin/python -m pip install pandas`
+`source /mnt/nfs/homes/alibourb/Documents/Python_for_Data_Science/.venv/bin/activate`
 
 To install therefore a new package ou lib :
 `/mnt/nfs/homes/alibourb/Documents/Python_for_Data_Science/.venv/bin/python -m pip install pandas`
