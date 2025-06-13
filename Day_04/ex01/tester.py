@@ -1,6 +1,4 @@
-from in_out import outer
-from in_out import square
-from in_out import pow
+from in_out import outer, pow, square
 
 my_counter = outer(3, square)
 print(my_counter())
@@ -13,7 +11,7 @@ print(another_counter())
 print(another_counter())
 
 
-# The expected output is : 
+# The expected output is :
 # 9
 # 81
 # 6561

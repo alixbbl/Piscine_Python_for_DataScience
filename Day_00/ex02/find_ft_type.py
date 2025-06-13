@@ -2,6 +2,7 @@
 
 # ******************* Exercice 2 *******************
 
+
 def all_thing_is_obj(object):
     if isinstance(object, list):
         print("List : <class 'list'>")
@@ -14,4 +15,4 @@ def all_thing_is_obj(object):
     elif isinstance(object, str):
         print(f"{object} is in the kitchen : <class 'str'>")
     else:
-        return ("Type not found\n42")
+        return "Type not found\n42"

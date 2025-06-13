@@ -29,83 +29,75 @@ from typing import Any
 # 		else:
 # 			print(f"{stat_function} : {STATS_FUNCTIONS[stat_function]()}")
 
+
 def ft_statistics(*args: Any, **kwargs: Any) -> None:
-	"""
-	Simple implementation of a statistic calculator.
-	"""
-	if not args:
-		for function in kwargs:
-			print("ERROR")
-		return None
+    """
+    Simple implementation of a statistic calculator.
+    """
+    if not args:
+        for function in kwargs:
+            print("ERROR")
+        return None
 
-	# On utilise ici des methodes à instances
-	def mean(values):
-		"""
-		Returns the mean of a container of values (list or tuple).
-		"""
-		return sum(values) / len(values)
+    def mean(values):
+        """
+        Returns the mean of a container of values (list or tuple).
+        """
+        return sum(values) / len(values)
 
-	def median(values):
-		"""
-		Returns the median of a container of values (list or tuple).
-		"""
-		sorted_values = sorted(values)
-		middle_index = len(values) // 2
-		if (len(values) % 2) == 1:
-			return sorted_values[middle_index]
-		else: # si on a un nbre pair, la mediane est la moyenne des deux index du milieu
-			return (sorted_values[middle_index - 1] + sorted_values[middle_index]) / 2
+    def median(values):
+        """
+        Returns the median of a container of values (list or tuple).
+        """
+        sorted_values = sorted(values)
+        middle_index = len(values) // 2
+        if (len(values) % 2) == 1:
+            return sorted_values[middle_index]
+        else:
+            return (sorted_values[middle_index - 1] + sorted_values[middle_index]) / 2
 
-	# cette fonction retourne des tuples
-	def quartile(values):
-		"""
-		Returns the quartiles of a container of values (list or tuple).
-		"""
-		sorted_values = sorted(values)
-		mid = len(sorted_values) // 2 # on recherche un index, si nbr pair, le mid est la valeur juste apres le milieu
-		if (len(sorted_values) % 2 == 0): # si on a un nbre pair de valeurs
-			lower_half = sorted_values[:mid] # on tronque la liste de valeurs a partir de mid(milieu)
-			higher_half = sorted_values[mid:]
-		else:
-			lower_half = sorted_values[:mid]
-			higher_half = sorted_values[mid + 1:]
-		return median(lower_half), median(higher_half)
+    # cette fonction retourne des tuples
+    def quartile(values):
+        """
+        Returns the quartiles of a container of values (list or tuple).
+        """
+        sorted_values = sorted(values)
+        mid = (len(sorted_values) // 2)
+        if len(sorted_values) % 2 == 0:
+            lower_half = sorted_values[:mid]
+            higher_half = sorted_values[mid:]
+        else:
+            lower_half = sorted_values[:mid]
+            higher_half = sorted_values[mid + 1:]
+        return median(lower_half), median(higher_half)
 
-	# std est une fonction qui retourne l'écart type d'un ensemble de données
-	# l'écart type est une mesure de dispersion des valeurs par rapport á la moyenne
-	# plus il est élevé, plus les valeurs de l'ensemble s'éloigne de la moyenne
-	# on calcule pour l'obtenir, la variance : moyenne des carrés des écarts à la moyenne
-	# l'écart type est la racine carrée de la variance
-	def std_function(values):
-		"""
-		Returns the standard deviation of a container of values (list or tuple).
-		"""
-		mean_values = mean(values)
-		variance = sum((x - mean_values) ** 2 for x in values) / len(values)
-		std_val = variance ** 0.5
-		return std_val
+    def std_function(values):
+        """
+        Returns the standard deviation of a container of values (list or tuple).
+        """
+        mean_values = mean(values)
+        variance = sum((x - mean_values) ** 2 for x in values) / len(values)
+        std_val = variance**0.5
+        return std_val
 
-	# mesure de la dispersion des valeurs autour de la valeur moyenne
-	# la diff avec l'écart type est leur unité d'expression! une variance est en metres carrés
-	# c'est donc une valeur plus difficilement interpretable que l'ecart type (meme unité que les valeurs de l'ensemble)
-	def var_function(values):
-		"""
-		Returns the variance of a container of values (list or tuple).
-		"""
-		mean_values = mean(values)
-		variance = sum((x - mean_values) ** 2 for x in values) / len(values)
-		return variance
+    def var_function(values):
+        """
+        Returns the variance of a container of values (list or tuple).
+        """
+        mean_values = mean(values)
+        variance = sum((x - mean_values) ** 2 for x in values) / len(values)
+        return variance
 
-	STATS_FUNCTIONS = {
-		'mean' : lambda: mean(args),
-		'median' : lambda: median(args),
-		'quartile' : lambda: quartile(args),
-		'std' : lambda: std_function(args),
-		'var' : lambda: var_function(args)
-	}
+    STATS_FUNCTIONS = {
+        "mean": lambda: mean(args),
+        "median": lambda: median(args),
+        "quartile": lambda: quartile(args),
+        "std": lambda: std_function(args),
+        "var": lambda: var_function(args),
+    }
 
-	for stat_name, stat_function in kwargs.items():
-		if not stat_function in STATS_FUNCTIONS:
-			pass
-		else:
-			print(f"{stat_function} : {STATS_FUNCTIONS[stat_function]()}")
+    for stat_name, stat_function in kwargs.items():
+        if stat_function not in STATS_FUNCTIONS:
+            pass
+        else:
+            print(f"{stat_function} : {STATS_FUNCTIONS[stat_function]()}")

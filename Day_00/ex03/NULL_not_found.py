@@ -1,7 +1,6 @@
-# ************* PYTHON PISCINE - DAY 0 *************
-
-# ******************* Exercice 3 *******************
 import math
+
+
 def NULL_not_found(object: any) -> int:
     if object is None:
         print("Nothing : None <class 'NoneType'>")
@@ -15,7 +14,7 @@ def NULL_not_found(object: any) -> int:
     elif isinstance(object, str) and object == "":
         print("Empty: <class 'str'>")
         return 0
-    elif isinstance(object, bool) and object == False:
+    elif isinstance(object, bool) and object == False:  # noqa: E712
         print("Fake: False <class 'bool'>")
         return 0
     else:
