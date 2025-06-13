@@ -1,1 +1,4 @@
-venv/
+Day_00/ex09/ft_package/env/
+**/env/
+**/venv/
+**/__pycache__/
